@@ -1,6 +1,6 @@
 # Project1
 SOURCE CODE:
-            template folder: contains all the html files required for frontend
+           	template folder: contains all the html files required for frontend
             routes.py: contains the backend part which includes all the routes that are linked to the functions in the boto.py file
             boto.py: includes the functions created to perform various functions
                         functions include:
