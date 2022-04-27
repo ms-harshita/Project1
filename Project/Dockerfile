@@ -1,14 +1,9 @@
-FROM python:latest
+
+FROM python:3.8-alpine
+COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
+RUN pip3 install -r requirements.txt
 COPY . /app
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip
-RUN ./aws/install 
-RUN aws configure set output json
-
-RUN pip install flask
-RUN pip install boto3
-
 EXPOSE 8080
-
-CMD [ "python3", "routes.py" ]
+ENTRYPOINT [ "python3" ]
+CMD ["routes.py"]
